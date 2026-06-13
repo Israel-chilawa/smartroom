@@ -9,9 +9,7 @@
 <h1>ESP32 LED Control</h1>
 
 <button onclick="sendCommand('on')">🔵 LED ON</button>
-
 <button onclick="sendCommand('off')">⚫ LED OFF</button>
-
 <button onclick="sendCommand('blink')">✨ BLINK</button>
 
 <script type="module">
@@ -24,7 +22,6 @@ import {
   set
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyC6irPxRxRto4v7LOjBjpyizr8zPyLXyHo",
   authDomain: "blinkesp32-210f3.firebaseapp.com",
@@ -36,32 +33,11 @@ const firebaseConfig = {
   measurementId: "G-YTL21V6G8W"
 };
 
-const firebaseConfig = {
-
-  apiKey: "YOUR_API_KEY",
-
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-
-  databaseURL: "YOUR_DATABASE_URL",
-
-  projectId: "YOUR_PROJECT_ID",
-
-  storageBucket: "YOUR_PROJECT.appspot.com",
-
-  messagingSenderId: "YOUR_SENDER_ID",
-
-  appId: "YOUR_APP_ID"
-
-};
-
 const app = initializeApp(firebaseConfig);
-
 const db = getDatabase(app);
 
-window.sendCommand = function(cmd){
-
-  set(ref(db,'led/command'),cmd);
-
+window.sendCommand = function(cmd) {
+  set(ref(db, 'led/command'), cmd);
 }
 
 </script>
